@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>✦ Donde Siempre Vuelve Mi Corazón ✦</title>
+<title>Capítulo VIII — Donde la espera aprende a amar</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -23,99 +19,317 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 
 background:
-radial-gradient(circle at top,#3b2c1d 0%,#221912 45%,#17110d 100%);
+radial-gradient(circle at top,#40285d 0%,#1b1027 35%,#09070d 75%,#050507 100%);
 
 font-family:'Cormorant Garamond',serif;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-min-height:100vh;
-
-padding:45px;
-
-}
-
-.book-page{
+overflow-x:hidden;
+color:#f8f1df;
 
 position:relative;
 
-width:min(900px,100%);
+}
+
+/*==========================
+ ESTRELLAS
+==========================*/
+
+.stars{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:0;
+
+}
+
+.star{
+
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+opacity:.6;
+animation:twinkle 4s infinite ease-in-out;
+
+}
+
+@keyframes twinkle{
+
+0%{opacity:.15;transform:scale(.8);}
+50%{opacity:1;transform:scale(1.6);}
+100%{opacity:.15;transform:scale(.8);}
+
+}
+
+/*==========================
+ AURORA
+==========================*/
+
+.aurora{
+
+position:fixed;
+width:900px;
+height:900px;
+
+background:radial-gradient(circle,
+rgba(193,165,255,.10),
+rgba(0,0,0,0));
+
+filter:blur(45px);
+
+top:-300px;
+left:-150px;
+
+animation:auroraMove 22s infinite alternate ease-in-out;
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+@keyframes auroraMove{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+
+transform:translate(220px,120px);
+
+}
+
+}
+
+/*==========================
+ PARTÍCULAS
+==========================*/
+
+.particle{
+
+position:fixed;
+
+color:rgba(255,235,185,.35);
+
+font-size:18px;
+
+animation:floatUp linear infinite;
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+@keyframes floatUp{
+
+0%{
+
+transform:translateY(100vh) rotate(0deg);
+opacity:0;
+
+}
+
+15%{
+
+opacity:1;
+
+}
+
+85%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+/*==========================
+ CONTENEDOR
+==========================*/
+
+.wrapper{
+
+position:relative;
+
+z-index:2;
+
+display:flex;
+
+justify-content:center;
+
+padding:80px 20px;
+
+}
+
+.page{
+
+width:100%;
+max-width:930px;
 
 background:
-linear-gradient(180deg,#f8efdd,#efe3c8,#ead9bb);
+linear-gradient(180deg,
+rgba(255,250,236,.97),
+rgba(250,243,225,.98));
 
-border:2px solid #c5ac79;
+color:#392819;
+
+border-radius:18px;
+
+padding:85px 70px;
+
+position:relative;
 
 box-shadow:
-0 0 60px rgba(0,0,0,.55),
-inset 0 0 80px rgba(124,95,56,.12);
 
-padding:70px 70px 130px;
+0 0 60px rgba(0,0,0,.60),
+
+0 0 25px rgba(255,233,170,.12);
 
 overflow:hidden;
 
 }
 
-.book-page::before{
+/*==========================
+ MARCO
+==========================*/
+
+.page::before{
 
 content:"";
 
 position:absolute;
 
-top:18px;
-left:18px;
-right:18px;
-bottom:18px;
+inset:18px;
 
-border:1px solid rgba(150,112,60,.35);
+border:2px solid rgba(135,95,40,.35);
+
+border-radius:10px;
+
+pointer-events:none;
 
 }
 
-.book-page::after{
+.page::after{
 
-content:"❦";
+content:"";
 
 position:absolute;
 
-top:26px;
-right:28px;
+inset:34px;
 
-font-size:30px;
+border:1px solid rgba(155,122,62,.25);
 
-color:#b79a66;
+border-radius:6px;
+
+pointer-events:none;
+
+}
+
+/*==========================
+ ORNAMENTOS
+==========================*/
+
+.corner{
+
+position:absolute;
+
+font-size:42px;
+
+color:#c3a25a;
 
 opacity:.45;
 
 }
 
-.ornament{
+.c1{
 
-text-align:center;
-
-font-size:24px;
-
-letter-spacing:8px;
-
-color:#8b6842;
-
-margin-bottom:25px;
+top:28px;
+left:30px;
 
 }
 
-.book-title{
+.c2{
+
+top:28px;
+right:30px;
+
+transform:rotate(90deg);
+
+}
+
+.c3{
+
+bottom:28px;
+left:30px;
+
+transform:rotate(-90deg);
+
+}
+
+.c4{
+
+bottom:28px;
+right:30px;
+
+transform:rotate(180deg);
+
+}
+
+/*==========================
+ ENCABEZADO
+==========================*/
+
+.chapter{
 
 text-align:center;
 
-font-size:18px;
+margin-bottom:20px;
+
+font-family:'Cinzel',serif;
 
 letter-spacing:3px;
 
-color:#6c4d2b;
+font-size:17px;
+
+color:#8d6333;
+
+}
+
+.title{
+
+text-align:center;
+
+font-family:'Cinzel',serif;
+
+font-size:37px;
+
+font-weight:700;
+
+line-height:1.5;
+
+color:#52371c;
 
 margin-bottom:18px;
 
@@ -123,19 +337,22 @@ text-transform:uppercase;
 
 }
 
-.chapter{
+.divider{
 
-text-align:center;
+width:170px;
+height:2px;
 
-font-size:34px;
+margin:25px auto;
 
-font-weight:600;
+background:
 
-letter-spacing:3px;
+linear-gradient(to right,
 
-color:#4d3620;
+transparent,
 
-margin-bottom:12px;
+#b99454,
+
+transparent);
 
 }
 
@@ -143,120 +360,298 @@ margin-bottom:12px;
 
 text-align:center;
 
-font-size:17px;
-
-letter-spacing:1px;
-
-color:#7d5d37;
-
-margin-bottom:50px;
-
-}
-
-.content{
-
-border:1px dashed rgba(150,113,63,.45);
-
-padding:45px 35px;
-
-text-align:center;
-
-line-height:2;
-
 font-size:22px;
-
-color:#5a4127;
 
 font-style:italic;
 
-background:rgba(255,255,255,.12);
+margin-bottom:55px;
+
+color:#6d5334;
 
 }
 
-.content strong{
+.letter{
 
-font-size:24px;
+font-size:30px;
 
-font-style:normal;
+line-height:2.08;
+
+text-align:justify;
 
 }
 
-#countdown{
+.letter p{
 
-margin-top:35px;
+margin-bottom:30px;
 
-font-size:42px;
+}
+
+.letter strong{
 
 font-weight:700;
 
-letter-spacing:4px;
-
-color:#7a2d2d;
+color:#4b2c13;
 
 }
 
-.count-text{
+/*==========================
+ LETRA CAPITAL
+==========================*/
 
-margin-top:18px;
+.dropcap:first-letter{
 
-font-size:18px;
+float:left;
 
-font-style:normal;
+font-size:82px;
 
-color:#705232;
+line-height:70px;
+
+padding-right:12px;
+
+padding-top:6px;
+
+font-family:'Cinzel',serif;
+
+color:#8a5b25;
 
 }
 
-.status{
+/*==========================
+ FIRMA
+==========================*/
 
-margin-top:45px;
+.signature{
+
+margin-top:70px;
 
 text-align:center;
 
-font-size:18px;
+font-size:31px;
 
-line-height:1.9;
-
-font-style:italic;
-
-color:#6d5030;
+color:#5d3515;
 
 }
 
-.seal{
+.signature span{
 
-margin:55px auto 0;
+display:block;
 
-width:78px;
+margin-top:18px;
 
-height:78px;
-
-border-radius:50%;
-
-background:
-radial-gradient(circle at 30% 30%,#a43b3b,#6d1919 70%);
-
-border:4px solid #d5b37a;
-
-box-shadow:
-0 8px 15px rgba(0,0,0,.25),
-inset 0 0 12px rgba(255,255,255,.15);
-
-}
-
-.page-number{
-
-position:absolute;
-
-bottom:28px;
-
-right:42px;
-
-font-size:17px;
+font-size:24px;
 
 letter-spacing:2px;
 
-color:#765636;
+color:#916331;
+
+}
+
+/*==========================
+ SELLO DE CERA
+==========================*/
+
+.seal-container{
+
+display:flex;
+justify-content:center;
+margin:70px 0 25px;
+
+}
+
+.wax-seal{
+
+width:120px;
+height:120px;
+border-radius:50%;
+
+background:
+radial-gradient(circle at 35% 30%,
+#ffb3b3,
+#b81428 45%,
+#7d0717 80%,
+#4d020b 100%);
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.35),
+inset 0 3px 10px rgba(255,255,255,.35),
+inset 0 -8px 12px rgba(0,0,0,.35);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+position:relative;
+
+}
+
+.wax-seal::before{
+
+content:"❤";
+
+font-size:44px;
+
+color:#ffe5cf;
+
+text-shadow:0 0 10px rgba(255,255,255,.35);
+
+}
+
+/*==========================
+ NUMERACIÓN
+==========================*/
+
+.page-number{
+
+margin-top:40px;
+
+text-align:center;
+
+font-family:'Cinzel',serif;
+
+font-size:18px;
+
+letter-spacing:5px;
+
+color:#8c6c42;
+
+}
+
+/*==========================
+ BOTÓN
+==========================*/
+
+.next-container{
+
+display:flex;
+
+justify-content:flex-end;
+
+margin-top:60px;
+
+}
+
+.next-page{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:15px 34px;
+
+text-decoration:none;
+
+background:linear-gradient(135deg,#8b5e2e,#c69b55);
+
+color:#fffdf7;
+
+font-family:'Cinzel',serif;
+
+letter-spacing:2px;
+
+border-radius:40px;
+
+transition:.35s;
+
+box-shadow:
+0 8px 22px rgba(0,0,0,.25);
+
+}
+
+.next-page:hover{
+
+transform:translateY(-4px) scale(1.03);
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.35);
+
+}
+
+/*==========================
+ RESPONSIVE
+==========================*/
+
+@media(max-width:900px){
+
+.page{
+
+padding:60px 30px;
+
+}
+
+.title{
+
+font-size:27px;
+
+}
+
+.letter{
+
+font-size:25px;
+
+line-height:1.95;
+
+}
+
+.signature{
+
+font-size:26px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.page{
+
+padding:45px 22px;
+
+}
+
+.chapter{
+
+font-size:14px;
+
+}
+
+.title{
+
+font-size:22px;
+
+line-height:1.45;
+
+}
+
+.date{
+
+font-size:18px;
+
+}
+
+.letter{
+
+font-size:22px;
+
+line-height:1.9;
+
+}
+
+.dropcap:first-letter{
+
+font-size:65px;
+
+line-height:55px;
+
+}
+
+.wax-seal{
+
+width:95px;
+height:95px;
+
+}
 
 }
 
@@ -266,120 +661,125 @@ color:#765636;
 
 <body>
 
-<div class="book-page">
+<div class="stars">
 
-<div class="ornament">
-
-✦ ❦ ✦ ❦ ✦ ❦ ✦
+<span class="star" style="top:5%;left:8%;animation-delay:.5s"></span>
+<span class="star" style="top:12%;left:30%;animation-delay:2s"></span>
+<span class="star" style="top:8%;left:65%;animation-delay:1.3s"></span>
+<span class="star" style="top:18%;left:90%;animation-delay:3.2s"></span>
+<span class="star" style="top:28%;left:15%;animation-delay:2.4s"></span>
+<span class="star" style="top:38%;left:80%;animation-delay:4s"></span>
+<span class="star" style="top:46%;left:52%;animation-delay:1.7s"></span>
+<span class="star" style="top:60%;left:10%;animation-delay:3.4s"></span>
+<span class="star" style="top:66%;left:70%;animation-delay:.9s"></span>
+<span class="star" style="top:80%;left:45%;animation-delay:4.5s"></span>
+<span class="star" style="top:88%;left:88%;animation-delay:2.7s"></span>
 
 </div>
 
-<div class="book-title">
+<div class="aurora"></div>
 
-✦ Donde Siempre Vuelve Mi Corazón ✦
+<div class="particle" style="left:8%;animation-duration:18s;">✦</div>
+<div class="particle" style="left:22%;animation-duration:22s;">❀</div>
+<div class="particle" style="left:39%;animation-duration:20s;">❤</div>
+<div class="particle" style="left:57%;animation-duration:24s;">✦</div>
+<div class="particle" style="left:73%;animation-duration:19s;">❀</div>
+<div class="particle" style="left:91%;animation-duration:23s;">❤</div>
 
-</div>
+<div class="wrapper">
+
+<div class="page">
+
+<div class="corner c1">❦</div>
+<div class="corner c2">❦</div>
+<div class="corner c3">❦</div>
+<div class="corner c4">❦</div>
 
 <div class="chapter">
-
-Capítulo VIII
-
+CAPÍTULO VIII
 </div>
+
+<h1 class="title">
+DONDE LA ESPERA APRENDE A AMAR,<br>
+LAS HORAS SE VUELVEN ETERNAS<br>
+Y MI CORAZÓN NO DEJA DE BUSCAR EL TUYO
+</h1>
+
+<div class="divider"></div>
 
 <div class="date">
-
-Domingo 12 de julio de 2026 • Noche
-
+Domingo, 12 de julio del 2026 — Noche
 </div>
 
-<div class="content">
+<div class="letter">
 
-<strong>
+<p class="dropcap"><strong>Mi niña hermosa:</strong></p>
 
-El destino aún guarda bajo llave las palabras de la próxima página...
+<p class="dropcap"><strong>Mi niña hermosa:</strong></p>
 
-</strong>
+<p>Hay noches en las que el silencio parece escribir cartas antes que yo. Esta es una de ellas. Mientras el reloj continúa su camino, mi corazón insiste en detenerse únicamente en ti. Es curioso cómo el tiempo puede avanzar para todos, pero para quien ama parece hacerlo con una lentitud infinita cuando la persona que más desea abrazar se encuentra lejos.</p>
 
-<br><br>
+<p>Hoy pensé en ti desde que el día comenzó a despedirse. Pensé en tu sonrisa, en esa forma tan única que tienes de iluminar hasta mis recuerdos más sencillos. A veces cierro los ojos solo para imaginar que estás aquí, y durante unos segundos consigo engañar a la distancia. Entonces sonrío... porque incluso mi imaginación sabe perfectamente dónde pertenece mi felicidad.</p>
 
-Cada latido del reloj acerca el momento en que este viejo libro volverá a abrirse para escribir un nuevo recuerdo de nuestro amor.
+<p>Confieso que esta noche te extraño muchísimo. No es un simple "te extraño". Es esa clase de ausencia que se siente en los pequeños detalles: en las conversaciones que quisiera tener contigo, en las risas que imagino compartir, en ese abrazo que llevo tantos días guardando para cuando vuelva a encontrarte.</p>
 
-<div id="countdown">
+<p>Ojalá estas horas pasen deprisa. Ojalá el amanecer llegue antes de lo esperado y cada minuto que falta decida correr hacia nosotros. Porque cada instante sin ti me recuerda cuánto valoro los momentos que compartimos y cuánto sueño con seguir construyendo una vida llena de nuevos recuerdos a tu lado.</p>
 
-00:00:00
+<p>Si alguien me preguntara cuál ha sido el regalo más bonito que la vida me ha dado, respondería sin pensarlo: <strong>tú</strong>. Porque llegaste cuando no sabía que mi corazón todavía tenía espacio para amar de una forma tan profunda. Llegaste para enseñarme que la ternura también puede ser inmensa y que un solo "te amo" dicho por la persona correcta puede cambiar completamente un día.</p>
+
+<p>Me gusta imaginar nuestro próximo encuentro. Imagino esa primera mirada donde sobrarán las palabras, ese abrazo que intentará recuperar todos estos días de espera y esa sonrisa tuya que siempre consigue hacerme olvidar cualquier preocupación. Estoy seguro de que, cuando vuelva a verte, entenderé una vez más que toda esta espera siempre habrá valido la pena.</p>
+
+<p>Gracias por existir. Gracias por permitirme caminar contigo, incluso cuando el camino nos obliga por momentos a recorrerlo desde la distancia. Gracias por convertirte en mi lugar favorito, en mi calma y también en mi mayor ilusión.</p>
+
+<p>Prometo seguir escribiendo nuestra historia con el mismo amor con el que escribo estas líneas. Prometo seguir eligiéndote en los días fáciles y en los difíciles. Prometo cuidar de este amor porque para mí es el tesoro más hermoso que la vida ha puesto entre mis manos.</p>
+
+<p>Descansa, mi amor. Mientras tú cierras los ojos, yo seguiré mirando el cielo con la esperanza de que las mismas estrellas que hoy te acompañan también lleven hasta ti cada uno de mis pensamientos. Y cuando llegue el momento de volver a verte, quiero que el tiempo comprenda que nunca podrá separar dos corazones que decidieron encontrarse para siempre.</p>
+
+<div class="signature">
+Con todo mi corazón, con toda mi alma y con un amor que crece cada día...
+
+<span>Siempre tuyo. ❤️</span>
+</div>
+<div style="margin-top:70px;text-align:center;padding:30px 15px;">
+
+<p style="
+font-family:'Cinzel',serif;
+font-size:19px;
+line-height:2.1;
+letter-spacing:2px;
+color:#ddb8ff;
+text-shadow:
+0 0 6px #b84dff,
+0 0 14px #b84dff,
+0 0 24px #8e35ff,
+0 0 40px #6d00ff;
+">
+
+Y mientras el mundo sigue girando y las horas continúan su camino, yo seguiré haciendo lo que mejor sabe hacer mi corazón: esperarte con ilusión, soñarte con una sonrisa y amarte con toda el alma. Así que ve preparándote, mi niña hermosa... porque cuando por fin llegue el momento de volver a encontrarnos, pienso abrazarte tan fuerte que hasta la distancia comprenderá que jamás debió interponerse entre nosotros. Después voy a mirarte fijamente a esos ojitos que tanto me encantan, voy a sonreír como el hombre más feliz del universo y, si me regalas el permiso, voy a robarte uno, dos... o quizá muchísimos besitos, de esos que llevan guardados tantos días esperando regresar a su lugar favorito. Porque tú eres mi casualidad favorita, mi paz, mi hogar y el amor más bonito que la vida pudo escribir en mi historia. Y mientras llega ese instante, seguiré escribiendo cada capítulo con la certeza de que el final más hermoso siempre será volver a ti. <strong>Te amo mucho, VALERIA PETRO VILLAZÓN.</strong> ❤️
+
+</p>
 
 </div>
-
-<div class="count-text">
-
-La siguiente página despertará cuando llegue la hora señalada.
-
+    
+<div class="seal-container">
+<div class="wax-seal"></div>
 </div>
-
-</div>
-
-<div class="status">
-
-✦ Incluso el tiempo espera con paciencia el instante perfecto para revelar un nuevo capítulo de nuestra historia. ✦
-
-</div>
-
-<div class="seal"></div>
 
 <div class="page-number">
+VIII
+</div>
 
-❦ &nbsp; VIII &nbsp; ❦
-
+<div class="next-container">
+<a class="next-page" href="capitulo9.html">
+Capítulo IX →
+</a>
 </div>
 
 </div>
 
-<script>
+</div>
 
-const fechaObjetivo = new Date("2026-07-12T21:50:00");
-
-function actualizarContador(){
-
-    const ahora = new Date();
-
-    const diferencia = fechaObjetivo.getTime() - ahora.getTime();
-
-    if(diferencia <= 0){
-
-        document.getElementById("countdown").innerHTML = "✦ Ya disponible ✦";
-        return;
-
-    }
-
-    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-
-    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
-    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-
-    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-
-    let texto = "";
-
-    if(dias > 0){
-        texto += String(dias).padStart(2,"0") + "d ";
-    }
-
-    texto +=
-        String(horas).padStart(2,"0") + ":" +
-        String(minutos).padStart(2,"0") + ":" +
-        String(segundos).padStart(2,"0");
-
-    document.getElementById("countdown").textContent = texto;
-
-}
-
-actualizarContador();
-
-setInterval(actualizarContador,1000);
-
-</script>
+</div>
 
 </body>
-
 </html>
