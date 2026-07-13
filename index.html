@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Capítulo VIII — Donde la espera aprende a amar</title>
+<title>DOMINGO 12 DE JULIO DEL 2026 - CARTA (CAP VIII) </title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,201 +23,110 @@ padding:0;
 box-sizing:border-box;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 
 background:
-radial-gradient(circle at top,#40285d 0%,#1b1027 35%,#09070d 75%,#050507 100%);
+radial-gradient(circle at center,#5c4327 0%,#352112 45%,#170d08 100%);
+
+min-height:100vh;
 
 font-family:'Cormorant Garamond',serif;
+
+padding:60px 20px;
+
 overflow-x:hidden;
-color:#f8f1df;
-
-position:relative;
 
 }
 
-/*==========================
- ESTRELLAS
-==========================*/
+/* Mesa */
 
-.stars{
+body::before{
 
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
-z-index:0;
-
-}
-
-.star{
-
-position:absolute;
-width:2px;
-height:2px;
-background:white;
-border-radius:50%;
-opacity:.6;
-animation:twinkle 4s infinite ease-in-out;
-
-}
-
-@keyframes twinkle{
-
-0%{opacity:.15;transform:scale(.8);}
-50%{opacity:1;transform:scale(1.6);}
-100%{opacity:.15;transform:scale(.8);}
-
-}
-
-/*==========================
- AURORA
-==========================*/
-
-.aurora{
-
-position:fixed;
-width:900px;
-height:900px;
-
-background:radial-gradient(circle,
-rgba(193,165,255,.10),
-rgba(0,0,0,0));
-
-filter:blur(45px);
-
-top:-300px;
-left:-150px;
-
-animation:auroraMove 22s infinite alternate ease-in-out;
-
-pointer-events:none;
-
-z-index:0;
-
-}
-
-@keyframes auroraMove{
-
-0%{
-transform:translate(0,0);
-}
-
-100%{
-
-transform:translate(220px,120px);
-
-}
-
-}
-
-/*==========================
- PARTÍCULAS
-==========================*/
-
-.particle{
+content:"";
 
 position:fixed;
 
-color:rgba(255,235,185,.35);
-
-font-size:18px;
-
-animation:floatUp linear infinite;
-
-pointer-events:none;
-
-z-index:1;
-
-}
-
-@keyframes floatUp{
-
-0%{
-
-transform:translateY(100vh) rotate(0deg);
-opacity:0;
-
-}
-
-15%{
-
-opacity:1;
-
-}
-
-85%{
-
-opacity:1;
-
-}
-
-100%{
-
-transform:translateY(-120vh) rotate(360deg);
-
-opacity:0;
-
-}
-
-}
-
-/*==========================
- CONTENEDOR
-==========================*/
-
-.wrapper{
-
-position:relative;
-
-z-index:2;
-
-display:flex;
-
-justify-content:center;
-
-padding:80px 20px;
-
-}
-
-.page{
-
-width:100%;
-max-width:930px;
+inset:0;
 
 background:
-linear-gradient(180deg,
-rgba(255,250,236,.97),
-rgba(250,243,225,.98));
+repeating-linear-gradient(
+90deg,
+rgba(255,255,255,.015),
+rgba(255,255,255,.015) 3px,
+transparent 3px,
+transparent 80px
+);
 
-color:#392819;
+opacity:.35;
+
+pointer-events:none;
+
+}
+
+/* Libro */
+
+.book{
+
+max-width:950px;
+
+margin:auto;
+
+background:#4b2816;
 
 border-radius:18px;
 
-padding:85px 70px;
+padding:28px;
+
+box-shadow:
+0 25px 60px rgba(0,0,0,.65);
+
+border:6px solid #8f693d;
+
+position:relative;
+
+}
+
+/* Grabado dorado */
+
+.cover-title{
+
+text-align:center;
+
+font-family:'Cinzel',serif;
+
+font-size:2rem;
+
+color:#f7d98d;
+
+letter-spacing:3px;
+
+text-shadow:
+0 2px 0 #7b582c,
+0 0 12px rgba(255,217,141,.35);
+
+margin-bottom:22px;
+
+}
+
+/* Página */
+
+.page{
+
+background:
+linear-gradient(#f9f0d9,#efe1bf);
+
+border-radius:10px;
+
+padding:65px;
 
 position:relative;
 
 box-shadow:
-
-0 0 60px rgba(0,0,0,.60),
-
-0 0 25px rgba(255,233,170,.12);
-
-overflow:hidden;
+inset 0 0 30px rgba(0,0,0,.12);
 
 }
 
-/*==========================
- MARCO
-==========================*/
+/* Textura */
 
 .page::before{
 
@@ -221,59 +134,44 @@ content:"";
 
 position:absolute;
 
-inset:18px;
+inset:0;
 
-border:2px solid rgba(135,95,40,.35);
+background-image:
+radial-gradient(rgba(90,70,40,.05) 1px,transparent 1px);
 
-border-radius:10px;
+background-size:18px 18px;
 
-pointer-events:none;
-
-}
-
-.page::after{
-
-content:"";
-
-position:absolute;
-
-inset:34px;
-
-border:1px solid rgba(155,122,62,.25);
-
-border-radius:6px;
+opacity:.55;
 
 pointer-events:none;
 
 }
 
-/*==========================
- ORNAMENTOS
-==========================*/
+/* Filigranas */
 
 .corner{
 
 position:absolute;
 
-font-size:42px;
+font-size:44px;
 
-color:#c3a25a;
+color:#b08a45;
 
-opacity:.45;
+opacity:.7;
 
 }
 
 .c1{
 
-top:28px;
-left:30px;
+top:15px;
+left:22px;
 
 }
 
 .c2{
 
-top:28px;
-right:30px;
+top:15px;
+right:22px;
 
 transform:rotate(90deg);
 
@@ -281,8 +179,8 @@ transform:rotate(90deg);
 
 .c3{
 
-bottom:28px;
-left:30px;
+bottom:15px;
+left:22px;
 
 transform:rotate(-90deg);
 
@@ -290,368 +188,190 @@ transform:rotate(-90deg);
 
 .c4{
 
-bottom:28px;
-right:30px;
+bottom:15px;
+right:22px;
 
 transform:rotate(180deg);
 
 }
 
-/*==========================
- ENCABEZADO
-==========================*/
+/* Encabezado */
 
-.chapter{
+.header{
 
 text-align:center;
 
-margin-bottom:20px;
-
-font-family:'Cinzel',serif;
-
-letter-spacing:3px;
-
-font-size:17px;
-
-color:#8d6333;
+margin-bottom:55px;
 
 }
 
-.title{
-
-text-align:center;
+.header h1{
 
 font-family:'Cinzel',serif;
 
-font-size:37px;
-
-font-weight:700;
+font-size:2rem;
 
 line-height:1.5;
 
-color:#52371c;
+color:#5b3213;
 
-margin-bottom:18px;
+margin-bottom:22px;
 
-text-transform:uppercase;
+}
+
+.date{
+
+font-size:1rem;
+
+color:#7b5c2e;
+
+letter-spacing:1px;
+
+}
+
+/* Saludo */
+
+.greeting{
+
+margin-top:35px;
+
+font-family:'Great Vibes',cursive;
+
+font-size:3rem;
+
+color:#7b4323;
+
+margin-bottom:28px;
+
+}
+
+/* Texto */
+
+p{
+
+font-size:1.35rem;
+
+line-height:2.05;
+
+text-align:justify;
+
+color:#4d3520;
+
+margin-bottom:22px;
+
+}
+
+/* Letra capital */
+
+.first::first-letter{
+
+font-size:5rem;
+
+float:left;
+
+line-height:.9;
+
+padding-right:10px;
+
+font-family:'Cinzel',serif;
+
+color:#8d5a2d;
+
+}
+
+strong{
+
+font-weight:700;
 
 }
 
 .divider{
 
-width:170px;
-height:2px;
+text-align:center;
 
-margin:25px auto;
+font-size:26px;
 
-background:
+margin:35px 0;
 
-linear-gradient(to right,
-
-transparent,
-
-#b99454,
-
-transparent);
+color:#9b7643;
 
 }
 
-.date{
+/* ========= PASAR LA PÁGINA ========= */
+
+.page-turn{
+
+margin:55px auto 25px;
 
 text-align:center;
 
-font-size:22px;
+}
+
+.page-turn-text{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:1.25rem;
+
+color:#7a5b39;
+
+line-height:1.8;
+
+margin-bottom:28px;
 
 font-style:italic;
 
-margin-bottom:55px;
-
-color:#6d5334;
-
 }
 
-.letter{
-
-font-size:30px;
-
-line-height:2.08;
-
-text-align:justify;
-
-}
-
-.letter p{
-
-margin-bottom:30px;
-
-}
-
-.letter strong{
-
-font-weight:700;
-
-color:#4b2c13;
-
-}
-
-/*==========================
- LETRA CAPITAL
-==========================*/
-
-.dropcap:first-letter{
-
-float:left;
-
-font-size:82px;
-
-line-height:70px;
-
-padding-right:12px;
-
-padding-top:6px;
-
-font-family:'Cinzel',serif;
-
-color:#8a5b25;
-
-}
-
-/*==========================
- FIRMA
-==========================*/
-
-.signature{
-
-margin-top:70px;
-
-text-align:center;
-
-font-size:31px;
-
-color:#5d3515;
-
-}
-
-.signature span{
-
-display:block;
-
-margin-top:18px;
-
-font-size:24px;
-
-letter-spacing:2px;
-
-color:#916331;
-
-}
-
-/*==========================
- SELLO DE CERA
-==========================*/
-
-.seal-container{
-
-display:flex;
-justify-content:center;
-margin:70px 0 25px;
-
-}
-
-.wax-seal{
-
-width:120px;
-height:120px;
-border-radius:50%;
-
-background:
-radial-gradient(circle at 35% 30%,
-#ffb3b3,
-#b81428 45%,
-#7d0717 80%,
-#4d020b 100%);
-
-box-shadow:
-0 10px 30px rgba(0,0,0,.35),
-inset 0 3px 10px rgba(255,255,255,.35),
-inset 0 -8px 12px rgba(0,0,0,.35);
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-position:relative;
-
-}
-
-.wax-seal::before{
-
-content:"❤";
-
-font-size:44px;
-
-color:#ffe5cf;
-
-text-shadow:0 0 10px rgba(255,255,255,.35);
-
-}
-
-/*==========================
- NUMERACIÓN
-==========================*/
-
-.page-number{
-
-margin-top:40px;
-
-text-align:center;
-
-font-family:'Cinzel',serif;
-
-font-size:18px;
-
-letter-spacing:5px;
-
-color:#8c6c42;
-
-}
-
-/*==========================
- BOTÓN
-==========================*/
-
-.next-container{
-
-display:flex;
-
-justify-content:flex-end;
-
-margin-top:60px;
-
-}
-
-.next-page{
+.page-corner{
 
 display:inline-flex;
 
 align-items:center;
 
-gap:12px;
+justify-content:center;
 
-padding:15px 34px;
+width:170px;
+
+height:70px;
+
+background:linear-gradient(145deg,#f8f0dc,#ead8b3);
+
+border:2px solid #c9a36b;
 
 text-decoration:none;
 
-background:linear-gradient(135deg,#8b5e2e,#c69b55);
-
-color:#fffdf7;
+color:#6b4725;
 
 font-family:'Cinzel',serif;
 
+font-size:.9rem;
+
 letter-spacing:2px;
 
-border-radius:40px;
+clip-path:polygon(0 0,100% 0,100% 75%,82% 100%,0 100%);
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.18);
 
 transition:.35s;
 
-box-shadow:
-0 8px 22px rgba(0,0,0,.25);
-
 }
 
-.next-page:hover{
+.page-corner:hover{
 
-transform:translateY(-4px) scale(1.03);
+transform:translateY(-5px) rotate(-2deg);
 
 box-shadow:
-0 15px 35px rgba(0,0,0,.35);
+0 18px 35px rgba(0,0,0,.28);
 
 }
 
-/*==========================
- RESPONSIVE
-==========================*/
+.page-corner span{
 
-@media(max-width:900px){
+padding:0 12px;
 
-.page{
-
-padding:60px 30px;
-
-}
-
-.title{
-
-font-size:27px;
-
-}
-
-.letter{
-
-font-size:25px;
-
-line-height:1.95;
-
-}
-
-.signature{
-
-font-size:26px;
-
-}
-
-}
-
-@media(max-width:600px){
-
-.page{
-
-padding:45px 22px;
-
-}
-
-.chapter{
-
-font-size:14px;
-
-}
-
-.title{
-
-font-size:22px;
-
-line-height:1.45;
-
-}
-
-.date{
-
-font-size:18px;
-
-}
-
-.letter{
-
-font-size:22px;
-
-line-height:1.9;
-
-}
-
-.dropcap:first-letter{
-
-font-size:65px;
-
-line-height:55px;
-
-}
-
-.wax-seal{
-
-width:95px;
-height:95px;
-
-}
+text-align:center;
 
 }
 
@@ -661,32 +381,13 @@ height:95px;
 
 <body>
 
-<div class="stars">
+<div class="book">
 
-<span class="star" style="top:5%;left:8%;animation-delay:.5s"></span>
-<span class="star" style="top:12%;left:30%;animation-delay:2s"></span>
-<span class="star" style="top:8%;left:65%;animation-delay:1.3s"></span>
-<span class="star" style="top:18%;left:90%;animation-delay:3.2s"></span>
-<span class="star" style="top:28%;left:15%;animation-delay:2.4s"></span>
-<span class="star" style="top:38%;left:80%;animation-delay:4s"></span>
-<span class="star" style="top:46%;left:52%;animation-delay:1.7s"></span>
-<span class="star" style="top:60%;left:10%;animation-delay:3.4s"></span>
-<span class="star" style="top:66%;left:70%;animation-delay:.9s"></span>
-<span class="star" style="top:80%;left:45%;animation-delay:4.5s"></span>
-<span class="star" style="top:88%;left:88%;animation-delay:2.7s"></span>
+<div class="cover-title">
+
+✦ Donde Siempre Vuelve Mi Corazón ✦
 
 </div>
-
-<div class="aurora"></div>
-
-<div class="particle" style="left:8%;animation-duration:18s;">✦</div>
-<div class="particle" style="left:22%;animation-duration:22s;">❀</div>
-<div class="particle" style="left:39%;animation-duration:20s;">❤</div>
-<div class="particle" style="left:57%;animation-duration:24s;">✦</div>
-<div class="particle" style="left:73%;animation-duration:19s;">❀</div>
-<div class="particle" style="left:91%;animation-duration:23s;">❤</div>
-
-<div class="wrapper">
 
 <div class="page">
 
@@ -695,85 +396,611 @@ height:95px;
 <div class="corner c3">❦</div>
 <div class="corner c4">❦</div>
 
-<div class="chapter">
-CAPÍTULO VIII
-</div>
+<div class="header">
 
-<h1 class="title">
-DONDE LA ESPERA APRENDE A AMAR,<br>
-LAS HORAS SE VUELVEN ETERNAS<br>
-Y MI CORAZÓN NO DEJA DE BUSCAR EL TUYO
+<h1>
+
+<strong>CAPÍTULO VIII</strong>
+
+<br><br>
+
+<strong>DONDE LA ESPERA APRENDE A AMAR, LAS HORAS SE VUELVEN ETERNAS Y MI CORAZÓN NO DEJA DE BUSCAR EL TUYO</strong>
+
 </h1>
 
-<div class="divider"></div>
-
 <div class="date">
-Domingo, 12 de julio del 2026 — Noche
+
+<strong>Domingo, 12 de julio del 2026 – Noche</strong>
 </div>
 
-<div class="letter">
-
-<p class="dropcap"><strong>Mi niña hermosa:</strong></p>
-
-<p class="dropcap"><strong>Mi niña hermosa:</strong></p>
-
-<p>Hay noches en las que el silencio parece escribir cartas antes que yo. Esta es una de ellas. Mientras el reloj continúa su camino, mi corazón insiste en detenerse únicamente en ti. Es curioso cómo el tiempo puede avanzar para todos, pero para quien ama parece hacerlo con una lentitud infinita cuando la persona que más desea abrazar se encuentra lejos.</p>
-
-<p>Hoy pensé en ti desde que el día comenzó a despedirse. Pensé en tu sonrisa, en esa forma tan única que tienes de iluminar hasta mis recuerdos más sencillos. A veces cierro los ojos solo para imaginar que estás aquí, y durante unos segundos consigo engañar a la distancia. Entonces sonrío... porque incluso mi imaginación sabe perfectamente dónde pertenece mi felicidad.</p>
-
-<p>Confieso que esta noche te extraño muchísimo. No es un simple "te extraño". Es esa clase de ausencia que se siente en los pequeños detalles: en las conversaciones que quisiera tener contigo, en las risas que imagino compartir, en ese abrazo que llevo tantos días guardando para cuando vuelva a encontrarte.</p>
-
-<p>Ojalá estas horas pasen deprisa. Ojalá el amanecer llegue antes de lo esperado y cada minuto que falta decida correr hacia nosotros. Porque cada instante sin ti me recuerda cuánto valoro los momentos que compartimos y cuánto sueño con seguir construyendo una vida llena de nuevos recuerdos a tu lado.</p>
-
-<p>Si alguien me preguntara cuál ha sido el regalo más bonito que la vida me ha dado, respondería sin pensarlo: <strong>tú</strong>. Porque llegaste cuando no sabía que mi corazón todavía tenía espacio para amar de una forma tan profunda. Llegaste para enseñarme que la ternura también puede ser inmensa y que un solo "te amo" dicho por la persona correcta puede cambiar completamente un día.</p>
-
-<p>Me gusta imaginar nuestro próximo encuentro. Imagino esa primera mirada donde sobrarán las palabras, ese abrazo que intentará recuperar todos estos días de espera y esa sonrisa tuya que siempre consigue hacerme olvidar cualquier preocupación. Estoy seguro de que, cuando vuelva a verte, entenderé una vez más que toda esta espera siempre habrá valido la pena.</p>
-
-<p>Gracias por existir. Gracias por permitirme caminar contigo, incluso cuando el camino nos obliga por momentos a recorrerlo desde la distancia. Gracias por convertirte en mi lugar favorito, en mi calma y también en mi mayor ilusión.</p>
-
-<p>Prometo seguir escribiendo nuestra historia con el mismo amor con el que escribo estas líneas. Prometo seguir eligiéndote en los días fáciles y en los difíciles. Prometo cuidar de este amor porque para mí es el tesoro más hermoso que la vida ha puesto entre mis manos.</p>
-
-<p>Descansa, mi amor. Mientras tú cierras los ojos, yo seguiré mirando el cielo con la esperanza de que las mismas estrellas que hoy te acompañan también lleven hasta ti cada uno de mis pensamientos. Y cuando llegue el momento de volver a verte, quiero que el tiempo comprenda que nunca podrá separar dos corazones que decidieron encontrarse para siempre.</p>
-
-<div class="signature">
-Con todo mi corazón, con toda mi alma y con un amor que crece cada día...
-
-<span>Siempre tuyo. ❤️</span>
 </div>
-<div style="margin-top:70px;text-align:center;padding:30px 15px;">
 
-<p style="
-font-family:'Cinzel',serif;
-font-size:19px;
-line-height:2.1;
-letter-spacing:2px;
-color:#ddb8ff;
-text-shadow:
-0 0 6px #b84dff,
-0 0 14px #b84dff,
-0 0 24px #8e35ff,
-0 0 40px #6d00ff;
+<div class="greeting">
+
+MI PRECIOSA:
+
+</div>
+
+ <p class="first">
+
+Hay noches que llegan envueltas en un silencio tan profundo que uno termina escuchando hasta los latidos de su propio corazón. Esta es una de ellas. Y, curiosamente, cada uno de esos latidos pronuncia tu nombre como si jamás hubiera aprendido otra palabra.
+
+</p>
+
+<p>
+
+Hoy vuelvo a escribirte desde este rincón donde tantas veces he dejado pedacitos de mi alma. Quizá nunca imaginé que un simple cuaderno, unas cuantas hojas o unas cuantas letras llegarían a convertirse en el refugio donde deposito todo lo que siento cuando no puedo estar contigo. Pero aquí estoy otra vez... escribiéndote, porque amarte también es encontrar la manera de abrazarte incluso cuando la distancia no me deja hacerlo.
+
+</p>
+
+<p>
+
+Esta noche te extraño muchísimo.
+
+</p>
+
+<p>
+
+Te extraño de esa forma que no duele solo en el corazón, sino también en las pequeñas costumbres. Extraño pensar que podría tomar tu mano. Extraño imaginar que podría mirarte unos segundos sin decir una sola palabra y aun así entenderlo todo. Extraño la tranquilidad que siento cuando estoy contigo, porque contigo el mundo siempre parece un lugar más bonito.
+
+</p>
+
+<div class="divider">
+
+❦
+
+</div>
+
+<p>
+
+Y mientras miro la hora una y otra vez, solo puedo pensar en lo mismo.
+
+</p>
+
+<p>
+
+<strong>Ojalá estas horas pasen rápido.</strong>
+
+</p>
+
+<p>
+
+Ojalá el tiempo deje de caminar tan despacio. Ojalá mañana llegue antes de lo que marca el reloj. Ojalá la distancia se canse de separarnos y decida regalarnos un poquito más de esos momentos que tanto extraño.
+
+</p>
+
+<p>
+
+Porque no sabes cuántas ganas tengo de volver a verte.
+
+</p>
+
+<p>
+
+Tengo ganas de volver a sonreír al descubrirte entre la gente. Tengo ganas de acercarme a ti y sentir que todo vuelve a estar exactamente donde pertenece. Tengo ganas de abrazarte tan fuerte que el tiempo entienda que nunca debió robarnos tantos días.
+
+</p>
+
+<p>
+
+Y aunque parezca increíble, mientras más pasan las horas, más cuenta me doy de algo.
+
+</p>
+
+<p>
+
+<strong>No solo te extraño.</strong>
+
+</p>
+
+<p>
+
+Cada día te necesito un poquito más.
+
+</p>
+
+<p>
+
+No porque no pueda vivir sin ti, sino porque contigo la vida tiene un color distinto. Contigo las preocupaciones pesan menos. Contigo las sonrisas duran más. Contigo hasta los días más normales terminan convirtiéndose en recuerdos que quisiera guardar para siempre.
+
+</p>
+
+<p>
+
+A veces cierro los ojos e imagino nuestro próximo encuentro.
+
+</p>
+
+<p>
+
+Imagino esa primera mirada en la que ninguno necesitará decir "te extrañé", porque nuestros ojos ya lo habrán confesado todo. Imagino ese abrazo que seguramente durará mucho más de lo normal, porque después de tantos días separados nuestros corazones tendrán demasiadas cosas pendientes por decirse. Imagino tu sonrisa... esa sonrisa que siempre logra hacerme sentir el hombre más afortunado del mundo.
+
+</p>
+
+<p>
+
+Y solo de pensarlo... sonrío.
+
+</p>
+
+<p>
+
+Porque sé que falta menos.
+
+</p>
+
+<p>
+
+Porque cada hora que pasa no solo significa una hora más de espera, sino también una hora menos para volver a estar contigo.
+
+</p>
+
+<div class="divider">
+
+❦
+
+</div>
+
+<p>
+
+<strong>¿Sabes qué es lo más bonito de todo esto?</strong>
+
+</p>
+
+<p>
+
+Que la distancia nunca ha logrado hacerme sentir menos enamorado de ti.
+
+</p>
+
+<p>
+
+Al contrario.
+
+</p>
+
+<p>
+
+Cada día descubro una razón nueva para elegirte.
+
+</p>
+
+<p>
+
+Te elijo cuando despierto.
+
+</p>
+
+<p>
+
+Te elijo mientras transcurre el día.
+
+</p>
+
+<p>
+
+Te elijo cuando cierro los ojos por la noche.
+
+</p>
+
+<p>
+
+Y también te elijo en esos pequeños momentos en los que nadie me ve sonreír simplemente porque apareció un recuerdo tuyo.
+
+</p>
+
+<p>
+
+Jamás pensé que alguien pudiera ocupar un lugar tan inmenso dentro de mi corazón.
+
+</p>
+
+<p>
+
+Pero llegaste tú.
+
+</p>
+
+<p>
+
+Y sin darte cuenta convertiste mis días en esperanza, mis noches en cartas y mis sueños en un futuro donde siempre apareces caminando a mi lado.
+
+</p>
+
+<p>
+
+Gracias por existir.
+
+</p>
+
+<p>
+
+Gracias por permitirme amarte.
+
+</p>
+
+<p>
+
+Gracias por convertirte en ese hogar al que siempre quiero regresar, incluso cuando todavía estamos construyendo el camino para llegar hasta él.
+
+</p>
+
+<p>
+
+Si algún día, dentro de muchos años, alguien encuentra este libro y comienza a leer sus páginas, descubrirá que aquí quedó escrita la historia de un muchacho que nunca dejó de esperar con ilusión a la mujer que amaba.
+
+</p>
+
+<p>
+
+Descubrirá que hubo noches como esta, donde la distancia parecía interminable, pero también descubrirá que ninguna distancia fue capaz de hacer más pequeño un amor que, por el contrario, crecía con cada amanecer.
+
+</p>
+
+<p>
+
+Y entonces entenderá que el verdadero amor nunca se mide por la cantidad de tiempo que dos personas pasan juntas, sino por la forma en que siguen eligiéndose incluso cuando deben esperar.
+
+</p>
+
+<p>
+
+Mi niña hermosa...
+
+</p>
+
+<p>
+
+Si esta noche el cielo está lleno de estrellas, quiero imaginar que una de ellas está brillando justo encima de ti.
+
+</p>
+
+<p>
+
+Y mientras tú descansas, yo le pediré en silencio que cuide de tus sueños, que te regale una noche tranquila y que, si puede concederme un pequeño milagro, haga que las horas vuelen para que llegue el momento de volver a verte.
+
+</p>
+
+<p>
+
+Porque no hay lugar en el que prefiera estar que contigo.
+
+</p>
+
+<p>
+
+No hay abrazo que desee más que el tuyo.
+
+</p>
+
+<p>
+
+No hay paz más bonita que la que encuentro cuando descanso entre tus brazos.
+
+</p>
+
+<p>
+
+Y no existe un capítulo de mi vida que quiera escribir sin que tú seas la protagonista.
+
+</p>
+
+<p>
+
+<strong>Descansa, mi amor.</strong>
+
+</p>
+
+<p>
+
+Sonríe cuando leas estas palabras, porque aunque esta noche nos separe la distancia, hay algo que jamás podrá alejarnos: todo el amor que llevamos guardado el uno por el otro.
+
+</p>
+
+<p>
+
+Y mientras el reloj sigue avanzando, mi corazón seguirá haciendo exactamente lo mismo de siempre...
+
+</p>
+
+<p style="text-align:center;">
+
+<strong>Esperarte.</strong><br><br>
+
+<strong>Amarte.</strong><br><br>
+
+<strong>Y soñar con el instante en que pueda volver a mirarte a los ojos para decirte, esta vez sin cartas de por medio, cuánto te amo.</strong>
+
+</p>
+
+<p style="text-align:center; margin-top:40px;">
+
+<strong>Con todo mi corazón, con toda mi alma y con un amor que cada día encuentra una manera nueva de crecer...</strong>
+
+<br><br>
+
+<strong>Te amo infinitamente, mi niña hermosa. Siempre tuyo. ❤️</strong>
+
+</p>
+
+<hr style="
+margin:55px auto;
+width:82%;
+border:none;
+border-top:1px solid rgba(120,85,40,.35);
 ">
 
-Y mientras el mundo sigue girando y las horas continúan su camino, yo seguiré haciendo lo que mejor sabe hacer mi corazón: esperarte con ilusión, soñarte con una sonrisa y amarte con toda el alma. Así que ve preparándote, mi niña hermosa... porque cuando por fin llegue el momento de volver a encontrarnos, pienso abrazarte tan fuerte que hasta la distancia comprenderá que jamás debió interponerse entre nosotros. Después voy a mirarte fijamente a esos ojitos que tanto me encantan, voy a sonreír como el hombre más feliz del universo y, si me regalas el permiso, voy a robarte uno, dos... o quizá muchísimos besitos, de esos que llevan guardados tantos días esperando regresar a su lugar favorito. Porque tú eres mi casualidad favorita, mi paz, mi hogar y el amor más bonito que la vida pudo escribir en mi historia. Y mientras llega ese instante, seguiré escribiendo cada capítulo con la certeza de que el final más hermoso siempre será volver a ti. <strong>Te amo mucho, VALERIA PETRO VILLAZÓN.</strong> ❤️
+<style>
+
+/*==========================
+GRABADO FINAL
+==========================*/
+
+.book-quote{
+
+margin:0 auto 55px;
+max-width:760px;
+padding:28px 36px;
+
+border:2px solid rgba(176,138,69,.45);
+border-radius:10px;
+
+background:rgba(255,248,228,.45);
+
+position:relative;
+
+}
+
+.book-quote::before{
+
+content:"❦";
+
+position:absolute;
+
+top:-18px;
+left:50%;
+
+transform:translateX(-50%);
+
+background:#efe1bf;
+
+padding:0 14px;
+
+font-size:26px;
+
+color:#9b7643;
+
+}
+
+.book-quote p{
+
+margin:0;
+
+text-align:center;
+
+font-size:1.45rem;
+
+line-height:2;
+
+color:#8b3dff;
+
+font-family:'Cormorant Garamond',serif;
+
+text-shadow:
+0 0 5px rgba(171,92,255,.45),
+0 0 10px rgba(171,92,255,.35),
+0 0 18px rgba(171,92,255,.28);
+
+}
+
+</style>
+
+<div class="book-quote">
+
+<p>
+
+<strong>
+
+Y mientras el mundo sigue girando y las horas continúan su camino, yo seguiré haciendo lo que mejor sabe hacer mi corazón: esperarte con ilusión, soñarte con una sonrisa y amarte con toda el alma. Así que ve preparándote, mi niña hermosa... porque cuando por fin llegue el momento de volver a encontrarnos, pienso abrazarte tan fuerte que hasta la distancia comprenderá que jamás debió interponerse entre nosotros. Después voy a mirarte fijamente a esos ojitos que tanto me encantan, voy a sonreír como el hombre más feliz del universo y, si me regalas el permiso, voy a robarte uno, dos... o quizá muchísimos besitos, de esos que llevan guardados tantos días esperando regresar a su lugar favorito. Porque tú eres mi casualidad favorita, mi paz, mi hogar y el amor más bonito que la vida pudo escribir en mi historia. Y mientras llega ese instante, seguiré escribiendo cada capítulo con la certeza de que el final más hermoso siempre será volver a ti.
+
+<br><br>
+
+✨ <span style="font-size:1.65rem;">Te amo mucho, VALERIA PETRO VILLAZÓN.</span> ❤️
+
+</strong>
 
 </p>
 
 </div>
-    
+
+<style>
+
+/*=========================================
+SELLO DE CERA
+=========================================*/
+
+.seal-container{
+
+display:flex;
+
+justify-content:center;
+
+margin:45px 0 15px;
+
+}
+
+.wax-seal{
+
+width:165px;
+height:165px;
+
+border-radius:50%;
+
+text-decoration:none;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+padding:18px;
+
+font-family:'Cinzel',serif;
+
+font-size:.82rem;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+color:#fff7ff;
+
+background:
+radial-gradient(circle at 35% 30%,
+#d88cff 0%,
+#a93fff 45%,
+#6d179f 75%,
+#4c0c74 100%);
+
+border:5px solid #f2d89d;
+
+box-shadow:
+0 12px 25px rgba(0,0,0,.35),
+inset 0 3px 10px rgba(255,255,255,.25),
+inset 0 -8px 15px rgba(0,0,0,.25);
+
+transition:.35s ease;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.wax-seal::before{
+
+content:"";
+
+position:absolute;
+
+width:210px;
+height:40px;
+
+background:rgba(255,255,255,.22);
+
+transform:rotate(-35deg);
+
+top:18px;
+left:-60px;
+
+}
+
+.wax-seal:hover{
+
+transform:scale(1.08) rotate(-2deg);
+
+box-shadow:
+0 20px 35px rgba(0,0,0,.45);
+
+}
+
+.ribbon{
+
+width:6px;
+
+height:95px;
+
+background:linear-gradient(#b3884d,#f4dca6,#b3884d);
+
+margin:0 auto;
+
+border-radius:5px;
+
+}
+
+.end-message{
+
+margin-top:28px;
+
+text-align:center;
+
+font-family:'Great Vibes',cursive;
+
+font-size:2.3rem;
+
+color:#7b4323;
+
+}
+
+.page-number{
+
+margin-top:40px;
+
+text-align:center;
+
+font-family:'Cinzel',serif;
+
+font-size:.95rem;
+
+letter-spacing:5px;
+
+color:#9a7742;
+
+}
+
+</style>
+
 <div class="seal-container">
-<div class="wax-seal"></div>
+
+<a
+class="wax-seal"
+target="_blank"
+href="https://j8753741-eng.github.io/Domingo-12-de-julio-del-2026---poema/">
+
+📜<br>
+
+ABRIR EL<br>
+
+POEMA DE<br>
+
+ESTA NOCHE
+
+</a>
+
+</div>
+
+<div class="page-turn">
+
+<p class="page-turn-text">
+
+<strong>Las historias que nacen del corazón nunca llegan a un verdadero final cuando aún quedan sentimientos por contar...</strong><br>
+
+Ahora solo queda abrir la siguiente página y descubrir qué nuevos recuerdos nos esperan.
+</p>
+
+<a href="https://j8753741-eng.github.io/Lunes-13-de-junio-del-2026---carta-cap-IX-/" class="page-corner">
+
+<span>✦ Pasar la página ✦</span>
+
+</a>
+
+</div>
+
+<div class="ribbon"></div>
+
+<div class="end-message">
+
+<strong>
+
+Mientras exista una noche para soñarte y un amanecer para volver a buscarte, mi corazón siempre escribirá tu nombre antes que cualquier otra palabra.
+</strong>
+
 </div>
 
 <div class="page-number">
-VIII
-</div>
 
-<div class="next-container">
-<a class="next-page" href="capitulo9.html">
-Capítulo IX →
-</a>
-</div>
+❦ &nbsp; VIII &nbsp; ❦
 
 </div>
 
@@ -782,4 +1009,5 @@ Capítulo IX →
 </div>
 
 </body>
-</html>
+
+ </html>
